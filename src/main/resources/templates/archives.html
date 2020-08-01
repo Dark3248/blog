@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>归档</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/me.css}">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav th:replace="_fragments :: nav(4)"></nav>
+
+    <!-- 中间内容 -->
+    <div class="m-padding-tb-massive">
+        <div class="ui container">
+            <div class="ui segment">
+                <div class="ui padded two column grid">
+                    <div class="column">
+                        <h2 class="ui teal header">归档</h2>
+                    </div>
+                    <div class="column right aligned">
+                        共 <h2 class="ui orange header m-inline-block"> 14 </h2> 篇
+                    </div>
+                </div>
+            </div>
+            <h2 class="ui center aligned header">2020</h2>
+            <div class="ui fluid vertical menu">
+                <a href="#" target="_blank" class="item">
+                    <span>
+                        <i class="teal circle icon"></i>标题
+                        <div class="ui mini teal basic label" style="margin-left: 1em;">09-09</div>
+                    </span>
+                    <div class="ui orange basic label">原创</div>
+                </a>
+                <a href="#" target="_blank" class="item">
+                    <span>
+                        <i class="teal circle icon"></i>标题
+                        <div class="ui mini teal basic label" style="margin-left: 1em;">09-09</div>
+                    </span>
+                    <div class="ui orange basic label">原创</div>
+                </a>
+                <a href="#" target="_blank" class="item">
+                    <span>
+                        <i class="teal circle icon"></i>标题
+                        <div class="ui mini teal basic label" style="margin-left: 1em;">09-09</div>
+                    </span>
+                    <div class="ui orange basic label">原创</div>
+                </a>
+            </div>
+
+            <h2 class="ui center aligned header">2019</h2>
+            <div class="ui fluid vertical menu">
+                <a href="#" target="_blank" class="item">
+                    <span>
+                        <i class="teal circle icon"></i>标题
+                        <div class="ui mini teal basic label" style="margin-left: 1em;">09-09</div>
+                    </span>
+                    <div class="ui orange basic label">原创</div>
+                </a>
+                <a href="#" target="_blank" class="item">
+                    <span>
+                        <i class="teal circle icon"></i>标题
+                        <div class="ui mini teal basic label" style="margin-left: 1em;">09-09</div>
+                    </span>
+                    <div class="ui orange basic label">原创</div>
+                </a>
+                <a href="#" target="_blank" class="item">
+                    <span>
+                        <i class="teal circle icon"></i>标题
+                        <div class="ui mini teal basic label" style="margin-left: 1em;">09-09</div>
+                    </span>
+                    <div class="ui orange basic label">原创</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部元素 -->
+    <footer th:replace="_fragments :: footer"></footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script th:src="@{/js/me.js}"></script>
+
+</body>
+</html>

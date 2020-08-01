@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/me.css}">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav th:replace="_fragments :: nav(5)"></nav>
+
+    <!-- 中间内容 -->
+    <div class="m-padding-tb-massive">
+        <div class="ui container">
+            <div class="ui stackable grid">
+                <div class="eleven wide column">
+                    <div class="ui segment">
+                        <img src="https://picsum.photos/id/237/800/600" alt="" class="ui rounded image">
+                    </div>
+                </div>
+                <div class="five wide column">
+                    <div class="ui top attached segment">
+                        <div class="ui header">关于我</div>
+                    </div>
+                    <div class="ui attached segment">
+                        <p class="m-text-thin m-text-spaced m-text-lined">
+                            关于我关于我关于我关于我关于我关于我关于我关于我关于我关于我关于我关于我关于我关于我关于我关于我
+                        </p>
+                    </div>
+                    <div class="ui attached segment">
+                        <div class="ui basic orange label m-margin-mini">运动</div>
+                        <div class="ui basic orange label m-margin-mini">运动</div>
+                        <div class="ui basic orange label m-margin-mini">运动</div>
+                        <div class="ui basic orange label m-margin-mini">运动</div>
+                    </div>
+                    <div class="ui attached segment">
+                        <div class="ui basic teal label m-margin-mini">Java</div>
+                        <div class="ui basic teal label m-margin-mini">JavaScript</div>
+                        <div class="ui basic teal label m-margin-mini">MySql</div>
+                        <div class="ui basic teal label m-margin-mini">SpringBoot</div>
+                        <div class="ui basic teal label m-margin-mini">Java</div>
+                        <div class="ui basic teal label m-margin-mini">Java</div>
+                        <div class="ui basic teal label m-margin-mini">Java</div>
+                        <div class="ui basic teal label m-margin-mini">Java</div>
+                        <div class="ui basic teal label m-margin-mini">Java</div>
+
+                    </div>
+                    <div class="ui bottom attached segment">
+                        <a href="#" class="ui weibo circular icon button" data-content="wjwqaq">
+                            <i class="weibo icon"></i>
+                        </a>
+                        <a href="#" class="ui wechat circular icon button">
+                            <i class="weixin icon"></i>
+                        </a>
+                        <a href="#" class="ui qq circular icon button" data-content="1195036354">
+                            <i class="qq icon"></i>
+                        </a>
+                        <a href="#" class="ui email circular icon button" data-content="1195036354@qq.com">
+                            <i class="envelope icon"></i>
+                        </a>
+                    </div>
+                    <div class="ui wechat-qr flowing popup transition hidden">
+                        <img th:src="@{images/weixin.png}" alt="" style="max-width: 150px;" class="ui rounded image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部元素 -->
+    <footer th:replace="_fragments :: footer"></footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script th:src="@{/js/me.js}"></script>
+    <script>
+        $('.qq').popup();
+        $('.wechat').popup({
+            popup : $('.wechat-qr')
+        });
+        $('.weibo').popup();
+        $('.email').popup();
+    </script>
+</body>
+</html>

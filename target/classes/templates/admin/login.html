@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客管理登录</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/me.css}">
+</head>
+<body>
+    <div class="ui container" style="max-width: 30em !important; padding-top: 10em !important;">
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <h2 class="ui teal image header">
+                    <div class="content">
+                        管理后台登录
+                    </div>
+                </h2>
+                <br><br>
+                <form class="ui large form" method="post" action="#" th:action="@{/admin/login}">
+                    <div class="ui segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="username" placeholder="用户名">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input type="password" name="password" placeholder="密码">
+                            </div>
+                        </div>
+                        <button class="ui fluid large teal submit button">登录</button>
+                    </div>
+                    <div class="ui error message"></div>
+                    <div class="ui negative message" th:unless="${#strings.isEmpty(message)}" th:text="${message}"></div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script th:src="@{/js/me.js}"></script>
+    <script>
+        $('.ui.form').form({
+            fields : {
+                username : {
+                    identifier : 'username',
+                    rules : [{
+                        type : 'empty',
+                        prompt : '请输入用户名'
+                    }]
+                },
+                password : {
+                    identifier : 'password',
+                    rules : [{
+                        type : 'empty',
+                        prompt : '请输入密码'
+                    }]
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

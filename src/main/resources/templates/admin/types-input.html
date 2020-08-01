@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分类新增</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/me.css}">
+    <style type="text/css">
+        * {margin: 0;padding: 0;}
+        html {height: 100%}
+        body {height: 100%;overflow-y: scroll}
+        .footer {
+            margin-top: -165px !important;
+            height: 165px !important;
+        }
+        .main {
+            padding-bottom: 165px !important;
+            min-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <!-- 导航栏 -->
+        <nav th:replace="admin/_fragments :: nav(2)"></nav>
+        <div class="ui attached pointing menu">
+            <div class="ui container">
+                <div class="right menu">
+                    <a href="#" th:href="@{/admin/types/input}" class="active item">新增</a>
+                    <a href="#" th:href="@{/admin/types}" class="item">列表</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 中间内容 -->
+        <div class="m-padding-tb-massive">
+            <div style="max-width: 50em !important;" class="ui container">
+                <form action="#" th:action="@{/admin/types/add}" method="POST" class="ui form">
+                    <div class="field">
+                        <div class="ui left labeled input">
+                            <label class="ui teal basic label">新增</label>
+                            <input type="text" th:name="name" placeholder="分类名称" >
+                        </div>
+                    </div>
+
+                    <div class="ui error message"></div>
+                    <div class="ui negative message" th:unless="${#strings.isEmpty(message)}" th:text="${message}"></div>
+
+                    <div class="ui right aligned container">
+
+                        <a th:href="@{/admin/types}" class="ui button">返回</a>
+                        <button class="ui teal submit button">提交</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部元素 -->
+    <div class="footer">
+        <footer th:replace="_fragments :: footer"></footer>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script th:src="@{/js/me.js}"></script>
+    <script>
+        $('.ui.form').form({
+            fields : {
+                title : {
+                    identifier: 'name',
+                    rules: [{
+                        type : 'empty',
+                        prompt: '请输入分类名称'
+                    }]
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

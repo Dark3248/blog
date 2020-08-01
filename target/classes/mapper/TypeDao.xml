@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wjw.blog.dao.TypeDao">
+
+    <select id="getTypeById" resultType="com.wjw.blog.entity.Type">
+        select * from blog.type
+            where id = #{id}
+    </select>
+
+    <insert id="saveType" parameterType="com.wjw.blog.entity.Type">
+        insert into blog.type values (#{id}, #{name})
+    </insert>
+
+    <select id="getTypeByName" resultType="com.wjw.blog.entity.Type">
+        select * from blog.type
+        where name = #{name}
+    </select>
+
+    <select id="getAdminType" resultType="com.wjw.blog.entity.Type">
+        select * from blog.type order by name
+    </select>
+
+    <delete id="deleteType">
+        delete from blog.type
+            where id = #{id}
+    </delete>
+
+    <update id="updateType" parameterType="com.wjw.blog.entity.Type">
+        update blog.type
+        set name = #{name}
+        where id = #{id}
+    </update>
+
+</mapper>

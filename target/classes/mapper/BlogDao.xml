@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wjw.blog.dao.BlogDao">
+
+    <!-- done 增-->
+    <insert id="saveBlog" parameterType="com.wjw.blog.entity.Blog">
+        insert into blog.blog ( id,title, content, first_picture, flag,
+                                views, appreciation, share_statement, comment,publish,
+                                recommend, create_time, update_time, type_id, user_id, description, tag_ids)
+        values (#{id}, #{title}, #{content}, #{firstPicture}, #{flag}, #{views}, #{appreciation},
+                #{shareStatement}, #{comment}, #{publish}, #{recommend}, #{createTime},
+                #{updateTime}, #{typeId}, #{userId}, #{description}, #{tagIds});
+    </insert>
+
+    <!--done 删除-->
+    <delete id="deleteBlog">
+        delete from blog.blog
+        where id = #{id}
+    </delete>
+
+    <!--done 修改-->
+    <update id="updateBlog" parameterType="com.wjw.blog.dto.BlogUpdate">
+        update blog.blog
+        set publish = #{publish},
+            flag = #{flag},
+            title = #{title},
+            content = #{content},
+            type_id = #{typeId},
+            first_picture = #{firstPicture},
+            description = #{description},
+            recommend = #{recommend},
+            share_statement = #{shareStatement},
+            appreciation = #{appreciation},
+            comment = #{comment},
+            update_time = #{updateTime},
+            tag_ids = #{tagIds}
+        where id = #{id}
+    </update>
+
+    <!--done-->
+    <select id="getBlogById" resultType="com.wjw.blog.dto.BlogUpdate">
+        select b.id, b.publish, b.flag, b.title, b.content, b.type_id,
+               b.first_picture, b.description, b.recommend, b.share_statement,
+               b.appreciation, b.comment, b.tag_ids
+        from blog.blog b
+        where  b.id = #{id}
+    </select>
+
+    <!--done  获取博客展示结果  -->
+    <resultMap id="blog" type="com.wjw.blog.dto.BlogQuery">
+        <id column="bid" property="id"/>
+        <result column="title" property="title"/>
+        <result column="update_time" property="updateTime" />
+        <result column="recommend" property="recommend" />
+        <result column="type_id" property="typeId" />
+        <association property="type" javaType="com.wjw.blog.entity.Type">
+            <id column="tid" property="id" />
+            <result column="name" property="name" />
+        </association>
+    </resultMap>
+    <select id="getAllBlogQuery" resultMap="blog">
+        select b.id bid, b.title, b.update_time, b.recommend, b.type_id, t.id tid, t.name
+        from blog.blog b left join blog.type t on b.type_id = t.id
+        order by b.update_time desc
+    </select>
+
+    <!--done  根据搜索条件返回结果-->
+    <select id="getBlogBySearch" parameterType="com.wjw.blog.dto.BlogSearch" resultMap="blog">
+        select b.id bid, b.title, b.update_time, b.recommend, b.type_id, t.id tid, t.name
+        from blog.blog b left join blog.type t on b.type_id = t.id
+
+        <where>
+            b.recommend = #{recommend}
+            <if test="typeId != null">
+                and b.type_id = #{typeId}
+            </if>
+            <if test="title != null">
+                and b.title = #{title}
+            </if>
+        </where>
+        order by b.update_time desc
+    </select>
+
+    <!-- done   添加博客和标签之间的联系-->
+    <insert id="saveBlogAndTag" parameterType="com.wjw.blog.entity.BlogAndTag">
+        insert into blog.blog_tag (blog_id, tag_id) values (#{blogId}, #{tagId});
+    </insert>
+
+    <!--done 删除联系-->
+    <delete id="deleteBlogAndTag" >
+        delete from blog.blog_tag where blog_id = #{blogId}
+    </delete>
+
+</mapper>

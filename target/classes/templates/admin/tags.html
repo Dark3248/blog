@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分类管理</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/me.css}">
+    <style type="text/css">
+        * {margin: 0;padding: 0;}
+        html {height: 100%}
+        body {height: 100%;overflow-y: scroll}
+        .footer {
+            margin-top: -165px !important;
+            height: 165px !important;
+        }
+        .main {
+            padding-bottom: 165px !important;
+            min-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <!-- 导航栏 -->
+        <nav th:replace="admin/_fragments :: nav(3)"></nav>
+        <div class="ui attached pointing menu">
+            <div class="ui container">
+                <div class="right menu">
+                    <a href="#" th:href="@{/admin/tags/input}" class="item">新增</a>
+                    <a href="#" th:href="@{/admin/tags}" class="active item">列表</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 中间内容 -->
+        <div class="m-padding-tb-massive">
+            <div style="max-width: 50em !important;" class="ui container">
+                <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+                    <i class="close icon"></i>
+                    <div class="header">提示：</div>
+                    <p th:text="${message}">恭喜，操作成功！</p>
+                </div>
+                <table class="ui celled table" style="text-align: center">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>名称</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="tag : ${pageInfo.list}">
+                        <td style="width: 10%" th:text="${tagStat.count} + ${(pageInfo.pageNum - 1) * 5}">1</td>
+                        <td style="width: 60%" th:text="${tag.name}">刻意练习清单</td>
+                        <td style="width: 30%">
+                            <a href="#" th:href="@{/admin/tags/{id}/input(id=${tag.id})}" class="ui mini teal button">编辑</a>
+                            <a href="#" onclick="return confirm('确定要删除吗？')" th:href="@{/admin/tags/{id}/delete(id=${tag.id})}" class="ui mini red button">删除</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr style="text-align: center">
+                        <th colspan="3">
+                            <div class="ui menu pagination">
+                                <a class="item" th:href="@{/admin/tags(p=1)}">首页</a>
+                                <a class="icon item" th:href="@{/admin/tags(p=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}"><i class="left chevron icon"></i></a>
+                                <div class="item m-inline-block">
+                                    <p>第<span th:text="${pageInfo.pageNum}"></span>页，共<span th:text="${pageInfo.pages}"></span>页</p>
+                                </div>
+                                <a class="icon item" th:href="@{/admin/tags(p=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}"><i class="right chevron icon"></i></a>
+                                <a class="item" th:href="@{/admin/tags(p=${pageInfo.pages})}">尾页</a>
+                            </div>
+                        </th>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <!-- 底部元素 -->
+        <footer th:replace="_fragments :: footer"></footer>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script th:src="@{/js/me.js}"></script>
+    <script>
+        //消息提示关闭初始化
+        $('.message .close').on('click', function () {
+            $(this).closest('.message').transition('fade');
+        });
+    </script>
+
+</body>
+</html>
