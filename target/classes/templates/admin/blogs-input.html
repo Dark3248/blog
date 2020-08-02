@@ -76,7 +76,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="field">
+                        <div class="required field">
                             <div class="ui left labeled action input">
                                 <label class="ui compact teal basic label">标签</label>
                                 <div class="ui fluid selection multiple dropdown">
@@ -99,7 +99,7 @@
                         </div>
                     </div>
 
-                    <div class="field">
+                    <div class="required field">
                         <textarea name="description"  placeholder="博客描述..." maxlength="200"></textarea>
                     </div>
 
@@ -186,11 +186,25 @@
                         prompt : '请选择分类'
                     }]
                 },
+                tag : {
+                    identifier : 'tagIds',
+                    rules : [{
+                        type : 'empty',
+                        prompt : '请选择标签'
+                    }]
+                },
                 firstPicture : {
                     identifier : 'firstPicture',
                     rules : [{
                         type : 'empty',
                         prompt : '请输入首图'
+                    }]
+                },
+                description : {
+                    identifier : 'description',
+                    rules : [{
+                        type : 'empty',
+                        prompt : '请输入博客描述'
                     }]
                 }
             }

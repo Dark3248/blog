@@ -12,6 +12,7 @@ public class BlogQuery {
     private Integer recommend;
     private Long typeId;
     private Type type;
+    private Integer publish;
 
     public Long getId() {
         return id;
@@ -61,6 +62,14 @@ public class BlogQuery {
         this.type = type;
     }
 
+    public Integer getPublish() {
+        return publish;
+    }
+
+    public void setPublish(Integer publish) {
+        this.publish = publish;
+    }
+
     @Override
     public String toString() {
         return "BlogQuery{" +
@@ -70,6 +79,7 @@ public class BlogQuery {
                 ", recommend=" + recommend +
                 ", typeId=" + typeId +
                 ", type=" + type +
+                ", publish=" + publish +
                 '}';
     }
 }

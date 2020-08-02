@@ -3,6 +3,7 @@ package com.wjw.blog.service.impl;
 import com.wjw.blog.dao.BlogDao;
 import com.wjw.blog.dto.BlogQuery;
 import com.wjw.blog.dto.BlogSearch;
+import com.wjw.blog.dto.BlogShow;
 import com.wjw.blog.dto.BlogUpdate;
 import com.wjw.blog.entity.Blog;
 import com.wjw.blog.entity.BlogAndTag;
@@ -66,4 +67,8 @@ public class BlogServiceImpl implements BlogService {
         return blogDao.updateBlog(blogUpdate);
     }
 
+    @Override
+    public List<BlogShow> getAllBlogShow() {
+        return blogDao.getAllBlogShow();
+    }
 }

@@ -4,9 +4,14 @@ public class BlogSearch {
 
     private String title;
     private Long typeId;
+    private boolean publish;
     private boolean recommend;
 
     public BlogSearch() {
+    }
+
+    public boolean isPublish() {
+        return publish;
     }
 
     @Override
@@ -14,8 +19,13 @@ public class BlogSearch {
         return "BlogSearch{" +
                 "title='" + title + '\'' +
                 ", typeId=" + typeId +
+                ", publish=" + publish +
                 ", recommend=" + recommend +
                 '}';
+    }
+
+    public void setPublish(boolean publish) {
+        this.publish = publish;
     }
 
     public String getTitle() {

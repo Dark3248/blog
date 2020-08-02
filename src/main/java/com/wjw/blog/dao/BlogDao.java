@@ -1,6 +1,7 @@
 package com.wjw.blog.dao;
 
 import com.wjw.blog.dto.BlogSearch;
+import com.wjw.blog.dto.BlogShow;
 import com.wjw.blog.dto.BlogUpdate;
 import com.wjw.blog.dto.BlogQuery;
 import com.wjw.blog.entity.Blog;
@@ -29,5 +30,7 @@ public interface BlogDao {
     int saveBlogAndTag(BlogAndTag blogAndTag);
 
     int deleteBlogAndTag(Long blogId);
+
+    List<BlogShow> getAllBlogShow();
 
 }

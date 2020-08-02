@@ -65,7 +65,13 @@
                                         </div>
                                     </div>
                                     <div class="field">
-                                        <button class="ui teal basic button" type="submit"><i class="search icon"></i>搜索</button>
+                                        <div class="ui checkbox">
+                                            <input type="checkbox" id="publish" name="publish">
+                                            <label for="publish">发布</label>
+                                        </div>
+                                    </div>
+                                    <div class="right aligned field">
+                                        <button class="ui mini teal basic button" type="submit"><i class="search icon"></i>搜索</button>
                                     </div>
                                 </div>
                         </form>
@@ -78,6 +84,7 @@
                                 <th>标题</th>
                                 <th>类型</th>
                                 <th>推荐</th>
+                                <th>发布</th>
                                 <th>更新时间</th>
                                 <th>操作</th>
                             </tr>
@@ -88,6 +95,7 @@
                                 <td th:text="${blog.title}">刻意练习清单</td>
                                 <td th:text="${blog.type.name}">认知升级</td>
                                 <td th:text="${blog.recommend == 1 ? '是' : '否'}">是</td>
+                                <td th:text="${blog.publish == 1 ? '发布' : '保存'}"></td>
                                 <td th:text="${#dates.format(blog.getUpdateTime(),'yyyy-MM-dd')}">2020-07-22 09:45</td>
                                 <td>
                                     <a href="#" th:href="@{/admin/blogs/{id}/update(id=${blog.id})}" class="ui mini teal button">编辑</a>
@@ -97,7 +105,7 @@
                             </tbody>
                             <tfoot>
                             <tr>
-                                <th colspan="6">
+                                <th colspan="7">
                                     <div class="ui menu pagination">
                                         <a class="item" th:href="@{/admin/blogs(p=1)}">首页</a>
                                         <a class="icon item" th:href="@{/admin/blogs(p=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}"><i class="left chevron icon"></i></a>
