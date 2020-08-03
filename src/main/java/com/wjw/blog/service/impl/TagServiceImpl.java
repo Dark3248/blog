@@ -25,6 +25,7 @@ public class TagServiceImpl implements TagService {
     @Transactional
     @Override
     public int deleteTag(Long id) {
+        tagDao.deleteBlogAndTag(id);
         return tagDao.deleteTag(id);
     }
 
@@ -50,6 +51,11 @@ public class TagServiceImpl implements TagService {
     }
 
     @Override
+    public List<Tag> getAllTag() {
+        return tagDao.getAllTag();
+    }
+
+    @Override
     public List<Tag> getTagByString(String str) {
         List<Tag> tags = new ArrayList<>();
         List<Long> ids = convertToList(str);
@@ -59,7 +65,7 @@ public class TagServiceImpl implements TagService {
         return tags;
     }
 
-    private List<Long> convertToList(String ids) {
+    public static List<Long> convertToList(String ids) {
         List<Long> list = new ArrayList<>();
         if(ids != null && !ids.equals("")) {
             String[] strings = ids.split(",");

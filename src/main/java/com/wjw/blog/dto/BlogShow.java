@@ -2,6 +2,9 @@ package com.wjw.blog.dto;
 
 import java.util.Date;
 
+/**
+ * 首页博客展示
+ */
 public class BlogShow {
 
     //Blog

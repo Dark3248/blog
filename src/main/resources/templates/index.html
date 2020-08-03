@@ -30,8 +30,8 @@
                     </div>
                     <!-- mid -->
                     <div class="ui attached segment">
-                        <div class="ui vertical segment m-padding-mid-part-item">
-                            <div class="ui middle aligned stackable grid" th:each="blog : ${pageInfo.list}">
+                        <div class="ui vertical segment m-padding-mid-part-item" th:each="blog : ${pageInfo.list}">
+                            <div class="ui middle aligned stackable grid">
                                 <div class="eleven wide column">
                                     <h3 class="ui header" th:text="${blog.title}">标题</h3>
                                     <p class="m-text-spaced m-text-lined" th:text="${blog.description}">文章描述</p>
@@ -87,35 +87,17 @@
                     <div class="ui segments">
                         <div class="ui secondary segment">
                             <div class="ui two column grid">
-                                <div class="column">
-                                    分类
-                                </div>
+                                <div class="column">分类</div>
                                 <div class="right aligned column">
-                                    <a href="#" target="_blank">more <i class="angle double right icon"></i></a>
+                                    <a href="#" th:href="@{/types/-1}" target="_blank">more<i class="angle double right icon"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="ui teal segment">
+                        <div class="ui segment">
                             <div class="ui fluid vertical menu">
-                                <a href="#" class="item" target="_blank">
-                                    学习日志
-                                    <div class="ui teal basic left pointing label">13</div>
-                                </a>
-                                <a href="#" class="item" target="_blank">
-                                    学习日志
-                                    <div class="ui teal basic left pointing label">13</div>
-                                </a>
-                                <a href="#" class="item" target="_blank">
-                                    学习日志
-                                    <div class="ui teal basic left pointing label">13</div>
-                                </a>
-                                <a href="#" class="item" target="_blank">
-                                    学习日志
-                                    <div class="ui teal basic left pointing label">13</div>
-                                </a>
-                                <a href="#" class="item" target="_blank">
-                                    学习日志
-                                    <div class="ui teal basic left pointing label">13</div>
+                                <a  th:href="@{/types/{id}(id=${type.id})}" class="item" th:each="type : ${types}">
+                                    <span th:text="${type.name}"></span>
+                                    <div class="ui teal basic left pointing label" th:text="${type.blogs.size()}">13</div>
                                 </a>
                             </div>
                         </div>
@@ -124,57 +106,26 @@
                     <div class="ui segments m-margin-top-small">
                         <div class="ui secondary segment">
                             <div class="ui two column grid">
-                                <div class="column">
-                                    标签
-                                </div>
+                                <div class="column">标签</div>
                                 <div class="right aligned column">
-                                    <a href="#" target="_blank">more <i class="angle double right icon"></i></a>
+                                    <a th:href="@{/tags/-1}">more <i class="angle double right icon"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="ui teal segment">
-                            <a href="#" target="_blank" class="ui teal basic label m-margin-mini">方法论
-                                <div class="detail">10</div>
-                            </a>
-                            <a href="#" target="_blank" class="ui teal basic label m-margin-mini">刻意练习
-                                <div class="detail">13</div>
-                            </a>
-                            <a href="#" target="_blank" class="ui teal basic label m-margin-mini">方法论
-                                <div class="detail">10</div>
-                            </a>
-                            <a href="#" target="_blank" class="ui teal basic label m-margin-mini">刻意练习
-                                <div class="detail">13</div>
-                            </a>
-                            <a href="#" target="_blank" class="ui teal basic label m-margin-mini">方法论
-                                <div class="detail">10</div>
-                            </a>
-                            <a href="#" target="_blank" class="ui teal basic label m-margin-mini">刻意练习
-                                <div class="detail">13</div>
-                            </a>
-                            <a href="#" target="_blank" class="ui teal basic label m-margin-mini">方法论
-                                <div class="detail">10</div>
-                            </a>
-                            <a href="#" target="_blank" class="ui teal basic label m-margin-mini">刻意练习
-                                <div class="detail">13</div>
+                        <div class="ui segment">
+                            <a th:href="@{/tags/{id}(id=${tag.id})}" th:if="${tagStat.index} < 6" th:each="tag : ${tags}" class="ui teal basic label m-margin-mini">
+                                <span th:text="${tag.name}"></span>
+                                <div class="detail" th:text="${tag.blogs.size()}">10</div>
                             </a>
                         </div>
                     </div>
-                    <!-- 最新推荐 -->
+                     最新推荐
                     <div class="ui segments m-margin-top-small">
                         <div class="ui secondary segment">
                             最新推荐
                         </div>
-                        <div class="ui teal segment">
-                            <a href="#" target="_blank" class="m-opacity-mid m-black">内容</a>
-                        </div>
-                        <div class="ui segment">
-                            <a href="#" target="_blank" class="m-opacity-mid m-black">内容</a>
-                        </div>
-                        <div class="ui segment">
-                            <a href="#" target="_blank" class="m-opacity-mid m-black">内容</a>
-                        </div>
-                        <div class="ui segment">
-                            <a href="#" target="_blank" class="m-opacity-mid m-black">内容</a>
+                        <div class="ui segment" th:if="${recommendStat.index} < 10 and ${recommend.recommend} == true" th:each="recommend : ${recommends}">
+                            <a href="#" th:href="@{/blog/{id}(id=${recommend.id})}" th:text="${recommend.title}" class="m-opacity-mid m-black">内容</a>
                         </div>
                     </div>
                 </div>

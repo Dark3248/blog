@@ -73,13 +73,11 @@
         select b.id bid, b.title, b.update_time, b.recommend, b.type_id, b.publish, t.id tid, t.name
         from blog.blog b left join blog.type t on b.type_id = t.id
         <where>
-            b.recommend = #{recommend}
-            and b.publish = #{publish}
             <if test="typeId != null">
                 and b.type_id = #{typeId}
             </if>
             <if test="title != null">
-                and b.title = #{title}
+                and b.title like '%${title}%'
             </if>
         </where>
         order by b.update_time desc
@@ -111,6 +109,19 @@
         select b.id, b.title, b.first_picture, b.views, b.update_time, b.description,
                t.name, u.nickname, u.avatar from blog.blog b, blog.type t, blog.user u
         where b.type_id = t.id and b.user_id = u.id
+        order by b.update_time desc
+    </select>
+
+    <select id="getAllRecommendBlog" resultType="com.wjw.blog.dto.BlogRecommend">
+        select id, title, recommend from blog.blog;
+    </select>
+
+    <select id="getByTypeId" resultMap="blogShow">
+        select b.id,b.title,b.first_picture, b.views,b.update_time,b.description,
+               t.name ,
+               u.nickname, u.avatar
+        from blog.blog b, blog.type t,blog.user u
+        where b.type_id = t.id and u.id = b.user_id and b.type_id = #{typeId}
         order by b.update_time desc
     </select>
 

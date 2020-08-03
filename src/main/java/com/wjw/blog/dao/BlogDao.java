@@ -1,9 +1,6 @@
 package com.wjw.blog.dao;
 
-import com.wjw.blog.dto.BlogSearch;
-import com.wjw.blog.dto.BlogShow;
-import com.wjw.blog.dto.BlogUpdate;
-import com.wjw.blog.dto.BlogQuery;
+import com.wjw.blog.dto.*;
 import com.wjw.blog.entity.Blog;
 import com.wjw.blog.entity.BlogAndTag;
 import org.apache.ibatis.annotations.Mapper;
@@ -32,5 +29,9 @@ public interface BlogDao {
     int deleteBlogAndTag(Long blogId);
 
     List<BlogShow> getAllBlogShow();
+
+    List<BlogRecommend> getAllRecommendBlog();
+
+    List<BlogShow> getByTypeId(Long typeId);
 
 }

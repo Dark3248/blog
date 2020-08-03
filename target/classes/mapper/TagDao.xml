@@ -34,5 +34,23 @@
         where id = #{id}
     </update>
 
+    <resultMap id="tags" type="com.wjw.blog.entity.Tag">
+        <id property="id" column="tid"/>
+        <result property="name" column="name"/>
+        <collection property="blogs" ofType="com.wjw.blog.entity.Blog">
+            <id property="id" column="bid"/>
+            <result property="title" column="title"/>
+        </collection>
+    </resultMap>
+    <select id="getAllTag" resultMap="tags">
+        select t.id tid, t.name, b.id bid, b.title
+        from blog.tag t, blog.blog b, blog.blog_tag bt
+        where t.id = bt.tag_id and b.id = bt.blog_id
+    </select>
+
+    <!--done 删除联系-->
+    <delete id="deleteBlogAndTag" >
+        delete from blog.blog_tag where tag_id = #{tagId}
+    </delete>
 
 </mapper>

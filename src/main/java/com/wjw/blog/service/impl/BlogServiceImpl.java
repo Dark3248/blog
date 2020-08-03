@@ -1,13 +1,9 @@
 package com.wjw.blog.service.impl;
 
 import com.wjw.blog.dao.BlogDao;
-import com.wjw.blog.dto.BlogQuery;
-import com.wjw.blog.dto.BlogSearch;
-import com.wjw.blog.dto.BlogShow;
-import com.wjw.blog.dto.BlogUpdate;
+import com.wjw.blog.dto.*;
 import com.wjw.blog.entity.Blog;
 import com.wjw.blog.entity.BlogAndTag;
-import com.wjw.blog.entity.Tag;
 import com.wjw.blog.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,11 +39,9 @@ public class BlogServiceImpl implements BlogService {
         blog.setViews(0);
         blog.setCreateTime(new Date());
         blog.setUpdateTime(new Date());
-        List<Tag> tags = blog.getTags();
-        BlogAndTag bat = null;
-        for(Tag tag : tags) {
-            bat = new BlogAndTag(tag.getId(), blog.getId());
-            blogDao.saveBlogAndTag(bat);
+        List<Long> tagIds = TagServiceImpl.convertToList(blog.getTagIds());
+        for(Long tagId : tagIds) {
+            blogDao.saveBlogAndTag(new BlogAndTag(tagId, blog.getId()));
         }
         return blogDao.saveBlog(blog);
     }
@@ -63,12 +57,27 @@ public class BlogServiceImpl implements BlogService {
     @Transactional
     @Override
     public int updateBlog(BlogUpdate blogUpdate) {
+        blogDao.deleteBlogAndTag(blogUpdate.getId());
         blogUpdate.setUpdateTime(new Date());
+        List<Long> tags = TagServiceImpl.convertToList(blogUpdate.getTagIds());
+        for(Long tagid : tags) {
+            blogDao.saveBlogAndTag(new BlogAndTag(tagid, blogUpdate.getId()));
+        }
         return blogDao.updateBlog(blogUpdate);
+    }
+
+    @Override
+    public List<BlogRecommend> getRecommendedBlog() {
+        return blogDao.getAllRecommendBlog();
     }
 
     @Override
     public List<BlogShow> getAllBlogShow() {
         return blogDao.getAllBlogShow();
+    }
+
+    @Override
+    public List<BlogShow> getAllByTypeId(Long typeId) {
+        return blogDao.getByTypeId(typeId);
     }
 }

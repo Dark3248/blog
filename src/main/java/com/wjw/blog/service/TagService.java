@@ -19,4 +19,6 @@ public interface TagService {
     List<Tag> getAdminTag();
 
     List<Tag> getTagByString(String str);
+
+    List<Tag> getAllTag();
 }

@@ -22,4 +22,8 @@ public interface TagDao {
 
     List<Tag> getAdminTag();
 
+    List<Tag> getAllTag();
+
+    int deleteBlogAndTag(Long tagId);
+
 }

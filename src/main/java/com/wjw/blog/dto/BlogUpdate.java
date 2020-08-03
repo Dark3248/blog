@@ -2,6 +2,9 @@ package com.wjw.blog.dto;
 
 import java.util.Date;
 
+/**
+ * 博客修改页面填写的数据
+ */
 public class BlogUpdate {
 
         private Long id;

@@ -34,4 +34,18 @@
         where id = #{id}
     </update>
 
+    <resultMap id="type" type="com.wjw.blog.entity.Type">
+        <id column="tid" property="id"/>
+        <result column="name" property="name"/>
+        <collection property="blogs" ofType="com.wjw.blog.entity.Blog">
+            <id column="bid" property="id"/>
+            <result column="title" property="title"/>
+        </collection>
+    </resultMap>
+    <select id="getAllType" resultMap="type">
+        select t.id tid, t.name, b.id bid, b.title
+        from blog.type t, blog.blog b
+        where t.id = b.type_id
+    </select>
+
 </mapper>

@@ -4,6 +4,10 @@ import com.wjw.blog.entity.Type;
 
 import java.util.Date;
 
+/**
+ * 博客管理页面展示类
+ */
+
 public class BlogQuery {
 
     private Long id;

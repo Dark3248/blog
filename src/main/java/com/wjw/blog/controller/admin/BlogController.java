@@ -6,10 +6,12 @@ import com.wjw.blog.dto.BlogQuery;
 import com.wjw.blog.dto.BlogSearch;
 import com.wjw.blog.dto.BlogUpdate;
 import com.wjw.blog.entity.Blog;
+import com.wjw.blog.entity.Tag;
 import com.wjw.blog.entity.User;
 import com.wjw.blog.service.BlogService;
 import com.wjw.blog.service.TagService;
 import com.wjw.blog.service.TypeService;
+import com.wjw.blog.service.impl.TagServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -91,7 +93,23 @@ public class BlogController {
     //  去修改页面
     @GetMapping("/blogs/{id}/update")
     public String toUpdate(@PathVariable Long id, Model model) {
+        //如果tag已经被删除，那么移除blog的tagIds中的被移除项
+        List<Tag> tags = tagService.getAdminTag();
         BlogUpdate blog =  blogService.getBlog(id);
+        List<Long> ids = TagServiceImpl.convertToList(blog.getTagIds());
+        StringBuilder str = new StringBuilder();
+        for(Long num : ids) {
+            for(Tag tag : tags) {
+                if(tag.getId().equals(num)) {
+                    str.append(num);
+                    str.append(',');
+                    break;
+                }
+            }
+        }
+        str.deleteCharAt(str.length() - 1);
+        blog.setTagIds(str.toString());
+
         model.addAttribute("blog", blog);
         model.addAttribute("types", typeService.getAdminType());
         model.addAttribute("tags", tagService.getAdminTag());

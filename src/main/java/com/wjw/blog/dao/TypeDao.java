@@ -24,4 +24,5 @@ public interface TypeDao {
     int deleteType(Long id);
 
     int updateType(Type type);
+
 }
