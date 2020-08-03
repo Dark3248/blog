@@ -17,8 +17,6 @@ public class BlogUpdate {
         private String description;
         private boolean publish;
         private boolean recommend;
-        private boolean shareStatement;
-        private boolean appreciation;
         private boolean comment;
         private Date updateTime;
 
@@ -102,22 +100,6 @@ public class BlogUpdate {
                 this.recommend = recommend;
         }
 
-        public boolean isShareStatement() {
-                return shareStatement;
-        }
-
-        public void setShareStatement(boolean shareStatement) {
-                this.shareStatement = shareStatement;
-        }
-
-        public boolean isAppreciation() {
-                return appreciation;
-        }
-
-        public void setAppreciation(boolean appreciation) {
-                this.appreciation = appreciation;
-        }
-
         public boolean isComment() {
                 return comment;
         }
@@ -147,8 +129,6 @@ public class BlogUpdate {
                         ", firstPicture='" + firstPicture + '\'' +
                         ", description='" + description + '\'' +
                         ", recommend=" + recommend +
-                        ", shareStatement=" + shareStatement +
-                        ", appreciation=" + appreciation +
                         ", comment=" + comment +
                         ", updateTime=" + updateTime +
                         '}';

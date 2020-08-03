@@ -34,4 +34,8 @@ public interface BlogDao {
 
     List<BlogShow> getByTypeId(Long typeId);
 
+    List<BlogShow> getSearchBlog(String query);
+
+    BlogDetail getBlogDetail(Long id);
+
 }

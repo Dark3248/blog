@@ -16,8 +16,6 @@ public class Blog {
     private String firstPicture;
     private String flag;
     private Integer views;
-    private boolean appreciation;
-    private boolean shareStatement;
     private boolean comment;
     private boolean publish;
     private boolean recommend;
@@ -121,22 +119,6 @@ public class Blog {
         this.views = views;
     }
 
-    public boolean isAppreciation() {
-        return appreciation;
-    }
-
-    public void setAppreciation(boolean appreciation) {
-        this.appreciation = appreciation;
-    }
-
-    public boolean isShareStatement() {
-        return shareStatement;
-    }
-
-    public void setShareStatement(boolean shareStatement) {
-        this.shareStatement = shareStatement;
-    }
-
     public boolean isComment() {
         return comment;
     }
@@ -218,8 +200,6 @@ public class Blog {
                 ", firstPicture='" + firstPicture + '\'' +
                 ", flag='" + flag + '\'' +
                 ", views=" + views +
-                ", appreciation=" + appreciation +
-                ", shareStatement=" + shareStatement +
                 ", comment=" + comment +
                 ", publish=" + publish +
                 ", recommend=" + recommend +

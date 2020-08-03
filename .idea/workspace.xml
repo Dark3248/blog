@@ -1,43 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a18c5060-9897-4348-a19a-4ac6d9ee9698" name="Default Changelist" comment="index">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/dto/BlogRecommend.java" afterDir="false" />
+    <list default="true" id="a18c5060-9897-4348-a19a-4ac6d9ee9698" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_atlassian_commonmark_commonmark_0_15_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_atlassian_commonmark_commonmark_ext_gfm_tables_0_15_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_atlassian_commonmark_commonmark_ext_heading_anchor_0_15_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/dto/BlogDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/util/MarkdownUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0b0cf800-6136-47e5-a438-845642af7433.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0b0cf800-6136-47e5-a438-845642af7433.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/blog.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/blog.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/blog.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wjw/blog/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wjw/blog/controller/admin/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/controller/admin/BlogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wjw/blog/controller/admin/TypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/controller/admin/TypeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wjw/blog/dao/BlogDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/dao/BlogDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wjw/blog/dao/TagDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/dao/TagDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wjw/blog/dao/TypeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/dao/TypeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wjw/blog/dto/BlogQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/dto/BlogQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wjw/blog/dto/BlogSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/dto/BlogSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wjw/blog/dto/BlogShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/dto/BlogShow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wjw/blog/dto/BlogUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/dto/BlogUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wjw/blog/entity/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/entity/Blog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wjw/blog/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/service/BlogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wjw/blog/service/TagService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/service/TagService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wjw/blog/service/impl/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/service/impl/BlogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wjw/blog/service/impl/TagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wjw/blog/service/impl/TagServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/logback.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/BlogDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/BlogDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TagDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TagDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TypeDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TypeDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/_fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/_fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/blogs-input.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/blogs-input.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/blogs-update.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/blogs-update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/blogs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/wjw/blog/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wjw/blog/controller/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wjw/blog/controller/admin/BlogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wjw/blog/controller/admin/BlogController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wjw/blog/controller/admin/TypeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wjw/blog/controller/admin/TypeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/wjw/blog/dao/BlogDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wjw/blog/dao/BlogDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wjw/blog/dao/TagDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wjw/blog/dao/TagDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wjw/blog/dto/BlogUpdate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wjw/blog/dto/BlogUpdate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wjw/blog/entity/Blog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wjw/blog/entity/Blog.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/wjw/blog/service/BlogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wjw/blog/service/BlogService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wjw/blog/service/TagService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wjw/blog/service/TagService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/wjw/blog/service/impl/BlogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wjw/blog/service/impl/BlogServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wjw/blog/service/impl/TagServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wjw/blog/service/impl/TagServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/logback-spring.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/BlogDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/BlogDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/TagDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/TagDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/TypeDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/TypeDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/_fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/_fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/blogs-input.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/blogs-input.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/blogs-update.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/blogs-update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/blogs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/blog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,6 +73,13 @@
         <item name="MySQL - blog@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="blog: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - blog@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="blog: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="blog: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -126,10 +135,11 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="D:/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -144,19 +154,20 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\java workspace\blog\src\main\resources\templates" />
+      <recent name="E:\java workspace\blog\src\main\resources\templates\admin" />
+      <recent name="E:\java workspace\blog\src\main\resources\mapper" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.wjw.blog.entity" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\java workspace\blog\src\main\resources\static\images" />
       <recent name="E:\java workspace\blog\src\main\resources\templates" />
       <recent name="E:\java workspace\blog\src\main\resources\static" />
       <recent name="E:\java workspace\blog\src\main\resources\static\js" />
       <recent name="E:\java workspace\blog\src\main\resources\static\css" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.wjw.blog.entity" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\java workspace\blog\src\main\resources\templates\admin" />
-      <recent name="E:\java workspace\blog\src\main\resources\mapper" />
     </key>
   </component>
   <component name="RunManager">
@@ -196,7 +207,17 @@
       <workItem from="1596354183197" duration="173000" />
       <workItem from="1596354378052" duration="18996000" />
       <workItem from="1596440086274" duration="4982000" />
+      <workItem from="1596445088690" duration="712000" />
+      <workItem from="1596458695161" duration="12027000" />
     </task>
+    <task id="LOCAL-00001" summary="optimization">
+      <created>1596445244031</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1596445244031</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +225,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="index" />
-    <option name="LAST_COMMIT_MESSAGE" value="index" />
+    <MESSAGE value="optimization" />
+    <option name="LAST_COMMIT_MESSAGE" value="optimization" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#SQL_Dialects" timestamp="1596189665072">
@@ -219,10 +241,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="460" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1595665338113" />
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1596444329604">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1596470521078">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1596444329604" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1596470521078" />
     <state x="483" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1596167582591">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -231,50 +253,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1595564224293" />
-    <state x="372" y="4" key="CommitChangelistDialog2" timestamp="1596364985746">
+    <state x="372" y="4" width="791" height="541" key="CommitChangelistDialog2" timestamp="1596445240058">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="372" y="4" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1596364985746" />
-    <state width="1493" height="234" key="GridCell.Tab.0.bottom" timestamp="1596445072802">
+    <state x="372" y="4" width="791" height="541" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1596445240058" />
+    <state width="1493" height="234" key="GridCell.Tab.0.bottom" timestamp="1596472448406">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596445072802" />
-    <state width="1493" height="234" key="GridCell.Tab.0.center" timestamp="1596445072802">
+    <state width="1493" height="234" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596472448406" />
+    <state width="1493" height="234" key="GridCell.Tab.0.center" timestamp="1596472448406">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596445072802" />
-    <state width="1493" height="234" key="GridCell.Tab.0.left" timestamp="1596445072802">
+    <state width="1493" height="234" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596472448406" />
+    <state width="1493" height="234" key="GridCell.Tab.0.left" timestamp="1596472448405">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596445072802" />
-    <state width="1493" height="234" key="GridCell.Tab.0.right" timestamp="1596445072802">
+    <state width="1493" height="234" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596472448405" />
+    <state width="1493" height="234" key="GridCell.Tab.0.right" timestamp="1596472448406">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596445072802" />
-    <state width="1493" height="234" key="GridCell.Tab.1.bottom" timestamp="1596445072802">
+    <state width="1493" height="234" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596472448406" />
+    <state width="1493" height="234" key="GridCell.Tab.1.bottom" timestamp="1596472448406">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596445072802" />
-    <state width="1493" height="234" key="GridCell.Tab.1.center" timestamp="1596445072802">
+    <state width="1493" height="234" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596472448406" />
+    <state width="1493" height="234" key="GridCell.Tab.1.center" timestamp="1596472448406">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1596445072802" />
-    <state width="1493" height="234" key="GridCell.Tab.1.left" timestamp="1596445072802">
+    <state width="1493" height="234" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1596472448406" />
+    <state width="1493" height="234" key="GridCell.Tab.1.left" timestamp="1596472448406">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1596445072802" />
-    <state width="1493" height="234" key="GridCell.Tab.1.right" timestamp="1596445072802">
+    <state width="1493" height="234" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1596472448406" />
+    <state width="1493" height="234" key="GridCell.Tab.1.right" timestamp="1596472448406">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="234" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1596445072802" />
+    <state width="1493" height="234" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1596472448406" />
     <state x="270" y="0" key="SettingsEditor" timestamp="1596354533768">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1596354533768" />
-    <state x="572" y="283" width="409" height="238" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1596213326113">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1596445353291">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="572" y="283" width="409" height="238" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1536.824@0.0.1536.824" timestamp="1596213326113" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1596445353291" />
+    <state x="572" y="283" width="409" height="238" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1596469216959">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="572" y="283" width="409" height="238" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1536.824@0.0.1536.824" timestamp="1596469216959" />
     <state x="548" y="231" width="439" height="356" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1596213593248">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -283,10 +309,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="720" y="57" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1596213651220" />
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1596445097161">
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1596458694923">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1596445097161" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1596458694923" />
     <state x="178" y="114" key="new project wizard" timestamp="1595579201257">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

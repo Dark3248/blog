@@ -33,7 +33,7 @@
                         <div class="ui vertical segment m-padding-mid-part-item" th:each="blog : ${pageInfo.list}">
                             <div class="ui middle aligned stackable grid">
                                 <div class="eleven wide column">
-                                    <h3 class="ui header" th:text="${blog.title}">标题</h3>
+                                    <h3 class="ui header"><a th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}"></a></h3>
                                     <p class="m-text-spaced m-text-lined" th:text="${blog.description}">文章描述</p>
                                     <div class="ui middle aligned grid">
                                         <div class="eleven wide column">
@@ -57,13 +57,13 @@
                                             </div>
                                         </div>
                                         <div class="five wide column right aligned">
-                                            <a href="#" target="_blank" style="padding: 0.3em" class="ui teal label" th:text="${blog.typeName}" >认知升级</a>
+                                            <a style="padding: 0.3em" class="ui teal label" th:text="${blog.typeName}" >认知升级</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="five wide column">
                                     <a href="#" target="_blank">
-                                        <img src="https://picsum.photos/id/237/800/450" th:src="@{${blog.firstPicture}}" alt="" class="ui rounded image">
+                                        <img th:src="@{${blog.firstPicture}}" alt="" class="ui rounded image">
                                     </a>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@
                             </a>
                         </div>
                     </div>
-                     最新推荐
+
                     <div class="ui segments m-margin-top-small">
                         <div class="ui secondary segment">
                             最新推荐

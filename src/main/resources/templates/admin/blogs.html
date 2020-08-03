@@ -85,7 +85,7 @@
                                 <td th:text="${#dates.format(blog.getUpdateTime(),'yyyy-MM-dd')}">2020-07-22 09:45</td>
                                 <td>
                                     <a href="#" th:href="@{/admin/blogs/{id}/update(id=${blog.id})}" class="ui mini teal button">编辑</a>
-                                    <a href="#" th:href="@{/admin/blogs/{id}/delete(id=${blog.id})}" class="ui mini red button">删除</a>
+                                    <a href="#" onclick="return confirm('确定要删除吗？')" th:href="@{/admin/blogs/{id}/delete(id=${blog.id})}" class="ui mini red button">删除</a>
                                 </td>
                             </tr>
                             </tbody>

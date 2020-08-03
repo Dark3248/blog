@@ -5,6 +5,7 @@ import com.wjw.blog.dto.*;
 import com.wjw.blog.entity.Blog;
 import com.wjw.blog.entity.BlogAndTag;
 import com.wjw.blog.service.BlogService;
+import com.wjw.blog.util.MarkdownUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -79,5 +80,18 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public List<BlogShow> getAllByTypeId(Long typeId) {
         return blogDao.getByTypeId(typeId);
+    }
+
+    @Override
+    public List<BlogShow> getSearchBlog(String query) {
+        return blogDao.getSearchBlog(query);
+    }
+
+    @Override
+    public BlogDetail getBlogDetail(Long id) {
+        BlogDetail blog = blogDao.getBlogDetail(id);
+        String content = MarkdownUtils.markdownToHtmlExtensions(blog.getContent());
+        blog.setContent(content);
+        return blog;
     }
 }
