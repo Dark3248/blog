@@ -25,8 +25,12 @@ public interface BlogService {
 
     List<BlogShow> getAllByTypeId(Long typeId);
 
+    List<BlogShow> getAllByTagId(Long tagId);
+
     List<BlogShow> getSearchBlog(String query);
 
     BlogDetail getBlogDetail(Long id);
+
+    List<List<BlogArchives>> getBlogByArchives();
 
 }

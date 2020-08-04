@@ -13,65 +13,19 @@
 
     <!-- 中间内容 -->
     <div class="m-padding-tb-massive">
-        <div class="ui container">
-            <div class="ui segment">
-                <div class="ui padded two column grid">
-                    <div class="column">
-                        <h2 class="ui teal header">归档</h2>
-                    </div>
-                    <div class="column right aligned">
-                        共 <h2 class="ui orange header m-inline-block"> 14 </h2> 篇
-                    </div>
+        <div class="ui container" style="max-width: 50em !important">
+            <div class="m-padding-tb-large" th:each="blogList : ${blogs}">
+                <h2 class="ui center aligned header" th:text="${blogList.get(0).year}">2020</h2>
+                <div class="ui secondary fluid vertical menu" th:each="blog : ${blogList}">
+                    <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="item">
+                        <span>
+                            <i class="mini minus icon" style="margin-right: 3em"></i>
+                            <span th:text="${blog.title}"></span>
+                        </span>
+                        <div class="ui orange basic label" th:text="${blog.flag}">原创</div>
+                        <div class="ui teal basic label" style="margin-left: 1em;" th:text="${#dates.format(blog.createTime, 'MM-dd')}">09-09</div>
+                    </a>
                 </div>
-            </div>
-            <h2 class="ui center aligned header">2020</h2>
-            <div class="ui fluid vertical menu">
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="teal circle icon"></i>标题
-                        <div class="ui mini teal basic label" style="margin-left: 1em;">09-09</div>
-                    </span>
-                    <div class="ui orange basic label">原创</div>
-                </a>
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="teal circle icon"></i>标题
-                        <div class="ui mini teal basic label" style="margin-left: 1em;">09-09</div>
-                    </span>
-                    <div class="ui orange basic label">原创</div>
-                </a>
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="teal circle icon"></i>标题
-                        <div class="ui mini teal basic label" style="margin-left: 1em;">09-09</div>
-                    </span>
-                    <div class="ui orange basic label">原创</div>
-                </a>
-            </div>
-
-            <h2 class="ui center aligned header">2019</h2>
-            <div class="ui fluid vertical menu">
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="teal circle icon"></i>标题
-                        <div class="ui mini teal basic label" style="margin-left: 1em;">09-09</div>
-                    </span>
-                    <div class="ui orange basic label">原创</div>
-                </a>
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="teal circle icon"></i>标题
-                        <div class="ui mini teal basic label" style="margin-left: 1em;">09-09</div>
-                    </span>
-                    <div class="ui orange basic label">原创</div>
-                </a>
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="teal circle icon"></i>标题
-                        <div class="ui mini teal basic label" style="margin-left: 1em;">09-09</div>
-                    </span>
-                    <div class="ui orange basic label">原创</div>
-                </a>
             </div>
         </div>
     </div>

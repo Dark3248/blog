@@ -7,16 +7,15 @@
 </head>
 
 <body>
-    <nav th:fragment="nav(n)" class="ui inverted attached segment m-padding-tb-mini m-shadow-small">
+    <div th:fragment="nav(n)" class="ui inverted vertical segment">
         <div class="ui container">
-            <div class="ui inverted secondary stackable menu">
-                <h2 class="ui teal header item">Blog</h2>
+            <div class="ui large inverted secondary pointing stackable menu">
                 <a href="#" th:href="@{/}" class="nav-item item m-mobile-hide" th:classappend="${n == 1} ? 'active'"><i class="home icon"></i>首页</a>
                 <a href="#" th:href="@{/types/-1}" class="nav-item item m-mobile-hide" th:classappend="${n == 2} ? 'active'"><i class="idea icon"></i>分类</a>
                 <a href="#" th:href="@{/tags/-1}" class="nav-item item m-mobile-hide" th:classappend="${n == 3} ? 'active'"><i class="tags icon"></i>标签</a>
                 <a href="#" th:href="@{/archives}" class="nav-item item m-mobile-hide" th:classappend="${n == 4} ? 'active'"><i class="clone icon"></i>归档</a>
                 <a href="#" th:href="@{/about}" class="nav-item item m-mobile-hide" th:classappend="${n == 5} ? 'active'"><i class="info icon"></i>关于我</a>
-                <div class="right nav-item item m-mobile-hide">
+                <div style="padding-left: 4em !important" class="nav-item item m-mobile-hide">
                     <form name="search" action="" th:action="@{/search}" method="get" target="_blank">
                         <div class="ui icon inverted transparent input">
                             <input type="text" name="query" placeholder="Search...." th:value="${query}">
@@ -24,22 +23,38 @@
                         </div>
                     </form>
                 </div>
+                <div class="nav-item right item m-mobile-hide"><a href="#" class="ui inverted button">登录</a></div>
             </div>
         </div>
         <div id="mobile-button" class="ui icon black button m-mobile-show">
             <i class="sidebar icon"></i>
         </div>
-    </nav>
+
+        <div class="ui container">
+            <div th:if="${n == 1}">
+                <h1 class="m-nav-header m-text-spaced">A Personal Blog Designed By wjw</h1>
+                <p class="m-nav-p">blablablabla</p>
+            </div>
+            <div th:if="${n == 6}">
+                <h1 class="m-nav-header" th:text="${blog.title}"></h1>
+                <div class="ui centered grid" style="margin-top: 1em">
+                    <p class="m-nav-p" th:text="'发表时间：' + ${#dates.format(blog.createTime, 'yyyy-MM-dd')}"></p>
+                    <div class="ui large black label" th:text="${blog.flag}">原创</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <footer class="ui container" th:fragment="footer">
         <div class="ui center aligned grid">
-            <a href="#" class="ui massive circular icon button m-margin-lr-label">
+            <a href="https://github.com/Dark3248" target="_blank" class="ui massive circular icon button m-margin-lr-label">
                 <i class="github icon"></i>
             </a>
-            <a href="#" class="ui massive circular icon button m-margin-lr-label">
+            <a href="#" target="_blank" class="ui massive circular icon button m-margin-lr-label">
                 <i class="stack overflow icon"></i>
             </a>
-            <a href="https://leetcode-cn.com/u/dadfasf/" class="ui massive circular icon button m-margin-lr-label">
+            <a href="https://leetcode-cn.com/u/dadfasf/" target="_blank" class="ui massive circular icon button m-margin-lr-label">
                 <svg style="fill: #707070" t="1596102830705" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2049" id="mx_n_1596102830707"><path d="M686.969238 765.086476l-115.039501 111.200586c-19.877051 19.919706-47.389279 28.237356-77.759367 28.237357s-57.882315-8.31765-77.802021-28.237357l-184.779799-186.102093c-19.919706-19.919706-29.943541-49.052809-29.943541-79.465551s10.023835-57.882315 29.943541-77.80202l184.225289-186.827222c19.919706-19.919706 47.986444-27.512228 78.356531-27.512228s57.882315 8.31765 77.759367 28.237357l115.039501 111.157931c21.924473 21.967128 58.223552 21.199345 81.043772-1.620876 22.82022-22.862875 23.588003-59.161953 1.66353-81.086426l-111.285895-112.43757a215.619088 215.619088 0 0 0-104.290538-57.029222l105.228939-106.764506c22.009782-21.924473 21.241999-58.266206-1.578221-81.086426-22.82022-22.82022-59.161953-23.545348-81.129081-1.620876l-430.811629 430.854284c-41.844179 41.886834-63.725997 99.683839-63.725997 163.580455 0 63.896616 21.881818 123.485115 63.725997 165.28664l185.419619 186.016783c41.844179 41.75887 99.683839 61.934504 163.537801 61.934504s121.693622-21.839164 163.580455-63.725997l111.285895-112.480225c21.924473-21.924473 21.15669-58.223552-1.66353-81.043772s-59.119299-23.588003-81.001117-1.66353z m200.86059-209.860714H455.098741c-29.943541 0-54.171363 25.763389-54.171363 57.413114s24.227822 57.413114 54.171363 57.413114h432.731087c29.900886 0 54.171363-25.763389 54.171363-57.413114s-24.270477-57.413114-54.171363-57.413114z" p-id="2050"></path></svg>
             </a>
         </div>
@@ -47,6 +62,7 @@
             <p class="m-opacity-tiny m-text-spaced">Copyright © wjw 2020 | A Personal Blog</p>
         </div>
     </footer>
+
 </body>
 
 </html>

@@ -15,34 +15,22 @@
     <div class="m-padding-tb-massive">
         <div class="ui container">
             <div class="ui stackable grid">
-                <div class="four wide column">
+                <div class="three wide column">
                     <div class="m-type-block-fixed">
-                        <button id="type-button" class="ui right floated icon basic button m-mobile-show">
+                        <button id="type-button" class="ui icon basic button m-mobile-show">
                             <i class="sidebar icon"></i>
                         </button>
-                        <div id="type-menu" class="m-mobile-hide">
-                            <h2 class="ui teal header">分类</h2>
-                            <div class="ui secondary vertical pointing menu nav-item m-mobile-wide">
-                                <a href="#" class=" item active">qwe
-                                    <div class="ui black basic left pointing label">13</div>
-                                </a>
-                                <a href="#" class=" item">qwe
-                                    <div class="ui black basic left pointing label">13</div>
-                                </a>
-                                <a href="#" class=" item">qwe
-                                    <div class="ui black basic left pointing label">13</div>
-                                </a>
-                                <a href="#" class=" item">qwe
-                                    <div class="ui black basic left pointing label">13</div>
-                                </a>
-                                <a href="#" class=" item">qwe
-                                    <div class="ui black basic left pointing label">13</div>
+                        <div id="type-menu" class="m-padding-tb-large m-mobile-hide">
+                            <div class="ui secondary vertical pointing menu nav-item m-mobile-wide" style="max-width: 13.5em !important">
+                                <a href="#" th:href="@{/types/{id}(id=${type.id})}" class="item" th:classappend="${activeType == type.id} ? 'active'" th:each="type : ${types}">
+                                    <span th:text="${type.name}"></span>
+                                    <div class="ui black basic left pointing label" th:text="${type.blogs.size()}">13</div>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="twelve wide column">
+                <div class="thirteen wide column">
                     <!-- top -->
                     <div class="ui top attached segment">
                         <div class="ui two column grid">
@@ -50,183 +38,46 @@
                                 <h2 class="ui teal header">博客</h2>
                             </div>
                             <div class="column right aligned">
-                                共 <h2 class="ui orange header m-inline-block"> 14 </h2> 篇
+                                共 <h2 class="ui orange header m-inline-block" th:text="${pageInfo.total}"> 14 </h2> 篇
                             </div>
                         </div>
                     </div>
                     <!-- mid -->
                     <div class="ui attached segment">
-                        <div class="ui vertical segment m-padding-mid-part-item">
-                            <div class="ui stackable grid">
+                        <div class="ui vertical segment m-padding-mid-part-item" th:each="blog : ${pageInfo.list}">
+                            <div class="ui middle aligned stackable grid">
                                 <div class="eleven wide column">
-                                    <h3 class="ui header">吸血怎么说？吸血</h3>
-                                    <p class="m-text-spaced m-text-lined">
-                                        哎，你会不会觉得我很菜，你会不会觉得你表现出来的非常的菜，很捞，你连白银都打不过，你可能
-                                        只有青铜，呐你看我现在在超神给你看
-                                    </p>
-                                    <div class="ui middle aligned stackable grid">
-                                        <div class="eleven wide column">
-                                            <div class="ui horizontal link list">
-                                                <div class="item">
-                                                    <img src="https://picsum.photos/id/237/100/100" alt="" class="ui avatar image">
-                                                    <div class="content"><a href="#" class="header">wjw</a></div>
-                                                </div>
-                                                <div class="item">
-                                                    <i class="calendar icon"></i>2020-7-17
-                                                </div>
-                                                <div class="item">
-                                                    <i class="eye icon"></i>123
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="five wide column right aligned">
-                                            <a href="#" target="_blank" style="padding: 0.3em" class="ui teal label">认知升级</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="five wide column">
-                                    <a href="#" target="_blank">
-                                        <img src="https://picsum.photos/id/237/800/450" alt="" class="ui rounded image">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ui vertical segment m-padding-mid-part-item">
-                            <div class="ui stackable grid">
-                                <div class="eleven wide column">
-                                    <h3 class="ui header">吸血怎么说？吸血</h3>
-                                    <p class="m-text-spaced m-text-lined">
-                                        哎，你会不会觉得我很菜，你会不会觉得你表现出来的非常的菜，很捞，你连白银都打不过，你可能
-                                        只有青铜，呐你看我现在在超神给你看
-                                    </p>
-                                    <div class="ui middle aligned stackable grid">
-                                        <div class="eleven wide column">
-                                            <div class="ui horizontal link list">
-                                                <div class="item">
-                                                    <img src="https://picsum.photos/id/237/100/100" alt="" class="ui avatar image">
-                                                    <div class="content"><a href="#" class="header">wjw</a></div>
-                                                </div>
-                                                <div class="item">
-                                                    <i class="calendar icon"></i>2020-7-17
-                                                </div>
-                                                <div class="item">
-                                                    <i class="eye icon"></i>123
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="five wide column right aligned">
-                                            <a href="#" target="_blank" style="padding: 0.3em" class="ui teal label">认知升级</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="five wide column">
-                                    <a href="#" target="_blank">
-                                        <img src="https://picsum.photos/id/237/800/450" alt="" class="ui rounded image">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ui vertical segment m-padding-mid-part-item">
-                            <div class="ui stackable grid">
-                                <div class="eleven wide column">
-                                    <h3 class="ui header">吸血怎么说？吸血</h3>
-                                    <p class="m-text-spaced m-text-lined">
-                                        哎，你会不会觉得我很菜，你会不会觉得你表现出来的非常的菜，很捞，你连白银都打不过，你可能
-                                        只有青铜，呐你看我现在在超神给你看
-                                    </p>
-                                    <div class="ui middle aligned stackable grid">
-                                        <div class="eleven wide column">
-                                            <div class="ui horizontal link list">
-                                                <div class="item">
-                                                    <img src="https://picsum.photos/id/237/100/100" alt="" class="ui avatar image">
-                                                    <div class="content"><a href="#" class="header">wjw</a></div>
-                                                </div>
-                                                <div class="item">
-                                                    <i class="calendar icon"></i>2020-7-17
-                                                </div>
-                                                <div class="item">
-                                                    <i class="eye icon"></i>123
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="five wide column right aligned">
-                                            <a href="#" target="_blank" style="padding: 0.3em" class="ui teal label">认知升级</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="five wide column">
-                                    <a href="#" target="_blank">
-                                        <img src="https://picsum.photos/id/237/800/450" alt="" class="ui rounded image">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ui vertical segment m-padding-mid-part-item">
-                            <div class="ui stackable grid">
-                                <div class="eleven wide column">
-                                    <h3 class="ui header">吸血怎么说？吸血</h3>
-                                    <p class="m-text-spaced m-text-lined">
-                                        哎，你会不会觉得我很菜，你会不会觉得你表现出来的非常的菜，很捞，你连白银都打不过，你可能
-                                        只有青铜，呐你看我现在在超神给你看
-                                    </p>
+                                    <h3 class="ui header"><a th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}"></a></h3>
+                                    <p class="m-text-spaced m-text-lined" th:text="${blog.description}">文章描述</p>
                                     <div class="ui middle aligned grid">
                                         <div class="eleven wide column">
                                             <div class="ui horizontal link list">
                                                 <div class="item">
-                                                    <img src="https://picsum.photos/id/237/100/100" alt="" class="ui avatar image">
-                                                    <div class="content"><a href="#" class="header">wjw</a></div>
+                                                    <img src="https://picsum.photos/id/237/100/100"  th:src="@{${blog.avatar}}" alt="" class="ui avatar image">
+                                                    <div class="content"><a class="header" th:text="${blog.nickname}">wjw</a></div>
                                                 </div>
                                                 <div class="item">
-                                                    <i class="calendar icon"></i>2020-7-17
+                                                    <div class="row">
+                                                        <i class="calendar icon"></i>
+                                                        <span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}"></span>
+                                                    </div>
                                                 </div>
                                                 <div class="item">
-                                                    <i class="eye icon"></i>123
+                                                    <div class="row">
+                                                        <i class="eye icon"></i>
+                                                        <span th:text="${blog.views}"></span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="five wide column right aligned">
-                                            <a href="#" target="_blank" style="padding: 0.3em" class="ui teal label">认知升级</a>
+                                            <a style="padding: 0.3em" class="ui teal label" th:text="${blog.typeName}" >认知升级</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="five wide column">
                                     <a href="#" target="_blank">
-                                        <img src="https://picsum.photos/id/237/800/450" alt="" class="ui rounded image">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ui vertical segment m-padding-mid-part-item">
-                            <div class="ui stackable grid">
-                                <div class="eleven wide column">
-                                    <h3 class="ui header">吸血怎么说？吸血</h3>
-                                    <p class="m-text-spaced m-text-lined">
-                                        哎，你会不会觉得我很菜，你会不会觉得你表现出来的非常的菜，很捞，你连白银都打不过，你可能
-                                        只有青铜，呐你看我现在在超神给你看
-                                    </p>
-                                    <div class="ui middle aligned grid">
-                                        <div class="eleven wide column">
-                                            <div class="ui horizontal link list">
-                                                <div class="item">
-                                                    <img src="https://picsum.photos/id/237/100/100" alt="" class="ui avatar image">
-                                                    <div class="content"><a href="#" class="header">wjw</a></div>
-                                                </div>
-                                                <div class="item">
-                                                    <i class="calendar icon"></i>2020-7-17
-                                                </div>
-                                                <div class="item">
-                                                    <i class="eye icon"></i>123
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="five wide column right aligned">
-                                            <a href="#" target="_blank" style="padding: 0.3em" class="ui teal label">认知升级</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="five wide column">
-                                    <a href="#" target="_blank">
-                                        <img src="https://picsum.photos/id/237/800/450" alt="" class="ui rounded image">
+                                        <img th:src="@{${blog.firstPicture}}" alt="" class="ui rounded image">
                                     </a>
                                 </div>
                             </div>
@@ -236,10 +87,12 @@
                     <div class="ui bottom attached segment">
                         <div class="ui two column grid">
                             <div class="column">
-                                <a href="#" class="ui mini teal basic button">上一页</a>
+                                <a th:if="${pageInfo.hasPreviousPage}" th:href="@{/types/{id}(p=${pageInfo.prePage}, id=${activeType})}"><i class="left chevron icon"></i></a>
+                                <a th:if="${!pageInfo.hasPreviousPage}"><i class="disabled left chevron icon"></i></a>
                             </div>
                             <div class="column right aligned">
-                                <a href="#" class="ui mini teal basic button">下一页</a>
+                                <a th:if="${pageInfo.hasNextPage}" th:href="@{/types/{id}(p=${pageInfo.nextPage}, id=${activeType})}"><i class="right chevron icon"></i></a>
+                                <a th:if="${!pageInfo.hasNextPage}"><i class="disabled right chevron icon"></i></a>
                             </div>
                         </div>
                     </div>

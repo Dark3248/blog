@@ -12,7 +12,7 @@
     <nav th:replace="_fragments :: nav(1)"></nav>
 
     <!-- 中间内容 -->
-    <div class="m-padding-tb-massive">
+    <div id="mid-item" class="m-padding-tb-massive">
         <div class="ui container">
             <div class="ui stackable grid">
                 <!-- left -->
@@ -21,7 +21,7 @@
                     <div class="ui top attached segment">
                         <div class="ui two column grid">
                             <div class="column">
-                                <h2 class="ui teal header">博客</h2>
+                                <h2 id="head" class="ui teal header">博客</h2>
                             </div>
                             <div class="column right aligned">
                                 共 <h2 class="ui orange header m-inline-block" th:text="${pageInfo.total}"> 14 </h2> 篇
@@ -73,10 +73,12 @@
                     <div class="ui bottom attached segment">
                         <div class="ui two column grid">
                             <div class="column">
-                                <a href="#" th:href="@{/(p=${pageInfo.hasPreviousPage} ? ${pageInfo.prePage} : 1)}"><i class="left chevron icon"></i></a>
+                                <a th:if="${pageInfo.hasPreviousPage}" th:href="@{/(p=${pageInfo.prePage})}"><i class="left chevron icon"></i></a>
+                                <a th:if="${!pageInfo.hasPreviousPage}"><i class="disabled left chevron icon"></i></a>
                             </div>
                             <div class="column right aligned">
-                                <a href="#" th:href="@{/(p=${pageInfo.hasNextPage} ? ${pageInfo.nextPage} : ${pageInfo.pages})}"><i class="right chevron icon"></i></a>
+                                <a th:if="${pageInfo.hasNextPage}" th:href="@{/(p=${pageInfo.nextPage})}"><i class="right chevron icon"></i></a>
+                                <a th:if="${!pageInfo.hasNextPage}"><i class="disabled right chevron icon"></i></a>
                             </div>
                         </div>
                     </div>
@@ -95,7 +97,7 @@
                         </div>
                         <div class="ui segment">
                             <div class="ui fluid vertical menu">
-                                <a  th:href="@{/types/{id}(id=${type.id})}" class="item" th:each="type : ${types}">
+                                <a  th:href="@{/types/{id}(id=${type.id})}" th:if="${typeStat.index} < 6" class="item" th:each="type : ${types}">
                                     <span th:text="${type.name}"></span>
                                     <div class="ui teal basic left pointing label" th:text="${type.blogs.size()}">13</div>
                                 </a>

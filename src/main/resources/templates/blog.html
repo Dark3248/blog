@@ -11,7 +11,7 @@
 </head>
 <body>
     <!-- 导航栏 -->
-    <nav th:replace="_fragments :: nav(0)"></nav>
+    <nav th:replace="_fragments :: nav(6)"></nav>
 
     <!-- 中间内容 -->
     <div class="m-padding-tb-massive">
@@ -23,12 +23,12 @@
                         <div class="ui horizontal link list">
                             <div class="item">
                                 <img th:src="@{${blog.avatar}}" alt="" class="ui avatar image">
-                                <div class="content"><a th:href="@{${blog.nickname}}" class="header">wjw</a></div>
+                                <div class="content"><a th:text="@{${blog.nickname}}" class="header">wjw</a></div>
                             </div>
                             <div class="item">
                                 <div class="row">
                                     <i class="calendar icon"></i>
-                                    <span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}"></span>
+                                    <span th:text="'更新时间：' + ${#dates.format(blog.updateTime,'yyyy-MM-dd')}"></span>
                                 </div>
                             </div>
                             <div class="item">
@@ -44,12 +44,6 @@
                         <img class="ui fluid rounded image" th:src="@{${blog.firstPicture}}" alt="">
                     </div>
                     <div class="ui attached segment">
-                        <!-- 标签 -->
-                        <div class="ui right aligned basic segment">
-                            <div class="ui orange basic right aligned label" th:text="${blog.flag}">原创</div>
-                        </div>
-                        <!-- 标题 -->
-                        <h2 class="ui center aligned header" th:text="${blog.title}">标题</h2>
                         <!-- 正文 -->
                         <div id="content" th:utext="${blog.content}" class="typo typo-selection m-padding-lr-responsive m-padding-tb-content-response"></div>
                         <!-- 标签 -->
@@ -62,9 +56,8 @@
                         <!-- 博客信息 -->
                         <ui class="list">
                             <li>作者：<span th:text="${blog.nickname}"></span></li>
-                            <li>发表时间：<span th:text="${#dates.format(blog.createTime, 'yyyy-MM-dd HH:mm')}"></span></li>
-                            <li>版权声明：本站原创文章</li>
-                            <li>转载请注明：标题 | blog by wjw</li>
+                            <li>版权声明：本文为本站原创文章</li>
+                            <li>转载请注明作者与原文链接，且不得篡改原文内容</li>
                         </ui>
                     </div>
                     <div class="ui bottom attached segment" th:if="${blog.comment}">

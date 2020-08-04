@@ -106,7 +106,7 @@
         select b.id, b.title, b.first_picture, b.views, b.update_time, b.description,
                t.name, u.nickname, u.avatar from blog.blog b, blog.type t, blog.user u
         where b.type_id = t.id and b.user_id = u.id and b.publish = 1
-        order by b.update_time desc
+        order by b.id desc
     </select>
 
     <!--done    获取首页推荐博客-->
@@ -118,11 +118,19 @@
     <!--done    根据typeId获取博客-->
     <select id="getByTypeId" resultMap="blogShow">
         select b.id,b.title,b.first_picture, b.views,b.update_time,b.description,
-               t.name ,
-               u.nickname, u.avatar
-        from blog.blog b, blog.type t,blog.user u
+               t.name, u.nickname, u.avatar
+        from blog.blog b, blog.type t, blog.user u
         where b.type_id = t.id and u.id = b.user_id and b.type_id = #{typeId}
-        order by b.update_time desc
+        order by b.id desc
+    </select>
+
+    <!--done    根据tagId获取博客-->
+    <select id="getByTagId" resultMap="blogShow">
+        select b.id,b.title,b.first_picture, b.views,b.update_time,b.description,
+               t1.name, u.nickname, u.avatar
+        from blog.blog b, blog.tag t, blog.user u, blog.blog_tag bt, blog.type t1
+        where bt.tag_id = t.id and bt.blog_id = b.id and b.type_id = t1.id and u.id = b.user_id and t.id = #{tagId}
+        order by b.id desc
     </select>
 
     <!--done    全局检索-->
@@ -132,7 +140,7 @@
         t.name, u.nickname, u.avatar
         from blog.blog b, blog.type t,blog.user u
         where b.type_id = t.id and u.id = b.user_id and (b.title like #{pattern} or b.content like #{pattern})
-        order by b.update_time desc
+        order by b.id desc
     </select>
 
     <!--    根据id得到博客详情-->
@@ -161,5 +169,16 @@
         where b.user_id = u.id and tb.blog_id = b.id and tb.tag_id = t.id and b.id = #{id}
     </select>
 
+    <!--    查询年份-->
+    <select id="getYears" resultType="String">
+        select date_format(create_time, '%Y') year from blog.blog
+        group by year
+        order by year desc
+    </select>
+
+    <select id="getBlogByArchives" resultType="com.wjw.blog.dto.BlogArchives">
+        select id, title, create_time, flag, date_format(create_time, '%Y') year from blog.blog
+        where date_format(create_time, '%Y') = #{year} and publish = 1
+    </select>
 
 </mapper>

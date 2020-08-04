@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -78,6 +79,11 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
+    public List<BlogShow> getAllByTagId(Long tagId) {
+        return blogDao.getByTagId(tagId);
+    }
+
+    @Override
     public List<BlogShow> getAllByTypeId(Long typeId) {
         return blogDao.getByTypeId(typeId);
     }
@@ -93,5 +99,17 @@ public class BlogServiceImpl implements BlogService {
         String content = MarkdownUtils.markdownToHtmlExtensions(blog.getContent());
         blog.setContent(content);
         return blog;
+    }
+
+    @Override
+    public List<List<BlogArchives>> getBlogByArchives() {
+        List<List<BlogArchives>> res = new ArrayList<>();
+        List<String> years = blogDao.getYears();
+        System.out.println(years);
+        for(String year : years) {
+            List<BlogArchives> list = blogDao.getBlogByArchives(year);
+            res.add(list);
+        }
+        return res;
     }
 }
