@@ -13,10 +13,9 @@ public class Comment {
     private String avatar;
     private Date createTime;
 
-    private Blog blog;
+    private Long blogId;
 
     private List<Comment> replyComments = new ArrayList<>();
-
     private Comment parentComment;
 
     public Comment() {
@@ -71,12 +70,12 @@ public class Comment {
         this.createTime = createTime;
     }
 
-    public Blog getBlog() {
-        return blog;
+    public Long getBlogId() {
+        return blogId;
     }
 
-    public void setBlog(Blog blog) {
-        this.blog = blog;
+    public void setBlogId(Long blogId) {
+        this.blogId = blogId;
     }
 
     public List<Comment> getReplyComments() {
@@ -104,7 +103,7 @@ public class Comment {
                 ", content='" + content + '\'' +
                 ", avatar='" + avatar + '\'' +
                 ", createTime=" + createTime +
-                ", blog=" + blog +
+                ", blogId=" + blogId +
                 ", replyComments=" + replyComments +
                 ", parentComment=" + parentComment +
                 '}';

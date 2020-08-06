@@ -179,6 +179,7 @@
     <select id="getBlogByArchives" resultType="com.wjw.blog.dto.BlogArchives">
         select id, title, create_time, flag, date_format(create_time, '%Y') year from blog.blog
         where date_format(create_time, '%Y') = #{year} and publish = 1
+        order by create_time desc
     </select>
 
     <update id="addViews" parameterType="Long">
