@@ -181,4 +181,10 @@
         where date_format(create_time, '%Y') = #{year} and publish = 1
     </select>
 
+    <update id="addViews" parameterType="Long">
+        update blog.blog
+        set views = views + 1
+        where id = #{blogId}
+    </update>
+
 </mapper>

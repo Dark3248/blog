@@ -44,4 +44,6 @@ public interface BlogDao {
 
     List<String> getYears();
 
+    int addViews(Long blogId);
+
 }

@@ -66,8 +66,6 @@ public class BlogController {
     public String add(Blog blog, RedirectAttributes attributes, HttpSession session) {
         //填写用户id
         blog.setUserId(((User) session.getAttribute("user")).getId());
-        //填写标签
-        blog.setTags(tagService.getTagByString(blog.getTagIds()));
         blogService.saveBlog(blog);
         return "redirect:/admin/blogs";
     }

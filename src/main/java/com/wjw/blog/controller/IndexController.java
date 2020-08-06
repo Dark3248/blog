@@ -50,6 +50,7 @@ public class IndexController {
 
     @GetMapping("/blog/{id}")
     public String blog(@PathVariable Long id, Model model) {
+        blogService.addViews(id);
         BlogDetail detailedBlog = blogService.getBlogDetail(id);
         model.addAttribute("blog", detailedBlog);
         return "blog";

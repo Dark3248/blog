@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class BlogServiceImpl implements BlogService {
@@ -39,6 +40,11 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public int saveBlog(Blog blog) {
         blog.setViews(0);
+        if(blog.getFirstPicture().length() == 0) {
+            Random random = new Random();
+            blog.setFirstPicture("https://picsum.photos/id/" + (random.nextInt(1080) + 1) + "/800/450");
+            random = null;
+        }
         blog.setCreateTime(new Date());
         blog.setUpdateTime(new Date());
         List<Long> tagIds = TagServiceImpl.convertToList(blog.getTagIds());
@@ -111,5 +117,11 @@ public class BlogServiceImpl implements BlogService {
             res.add(list);
         }
         return res;
+    }
+
+    @Override
+    @Transactional
+    public int addViews(Long blogId) {
+        return blogDao.addViews(blogId);
     }
 }

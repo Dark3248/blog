@@ -5,8 +5,24 @@
 
 <mapper namespace="com.wjw.blog.dao.UserDao">
 
-    <select id="findByUsernameAndPassword" resultType="com.wjw.blog.entity.User">
+    <select id="findAdminByUsernameAndPassword" resultType="com.wjw.blog.entity.User">
         select * from blog.user
-            where username = #{username} and password = #{password};
+            where username = #{username} and password = #{password} and type = 1
     </select>
+
+    <select id="findUser" resultType="com.wjw.blog.entity.User">
+        select * from blog.user
+        where username = #{username} and password = #{password}
+    </select>
+
+    <select id="findUserByUsername" resultType="com.wjw.blog.entity.User">
+        select * from blog.user
+        where username = #{username}
+    </select>
+
+    <insert id="addUser" parameterType="com.wjw.blog.entity.User">
+        insert into blog.user (nickname, username, password, email, avatar, type, create_time, update_time)
+        values (#{nickname}, #{username}, #{password}, #{email}, #{avatar}, #{type}, #{createTime}, #{updateTime})
+    </insert>
+
 </mapper>

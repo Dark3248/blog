@@ -9,5 +9,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserDao {
 
-    User findByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
+    User findAdminByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
+
+    User findUser(@Param("username") String username, @Param("password") String password);
+
+    int addUser(User user);
+
+    User findUserByUsername(String username);
+
 }

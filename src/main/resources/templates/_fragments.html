@@ -23,7 +23,15 @@
                         </div>
                     </form>
                 </div>
-                <div class="nav-item right item m-mobile-hide"><a href="#" class="ui inverted button">登录</a></div>
+                <div th:if="${session.user == null}" class="nav-item right item m-mobile-hide"><a th:href="@{/loginPage}" class="ui inverted button">登录</a></div>
+                <div th:if="${session.user != null}" class="nav-item ui right dropdown item m-mobile-hide">
+                    <img th:src="@{${session.user.avatar}}" alt="" class="ui avatar image">
+                    <div style="padding-left: 5px" class="text" th:text="${session.user.username}">wjw</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="#" th:href="@{/logout}" class="item">注销</a>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="mobile-button" class="ui icon black button m-mobile-show">

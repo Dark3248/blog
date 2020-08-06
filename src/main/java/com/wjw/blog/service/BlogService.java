@@ -33,4 +33,6 @@ public interface BlogService {
 
     List<List<BlogArchives>> getBlogByArchives();
 
+    int addViews(Long blogId);
+
 }
