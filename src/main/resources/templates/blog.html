@@ -47,8 +47,8 @@
                         <!-- 正文 -->
                         <div th:utext="${blog.content}" class="typo typo-selection m-padding-lr-responsive m-padding-tb-content-response"></div>
                         <!-- 标签 -->
-                        <div class="m-padding-lr-responsive" th:each="tag : ${blog.tags}">
-                            <div class="ui teal basic label" th:text="${tag.name}">标签</div>
+                        <div class="m-padding-lr-responsive">
+                            <div class="ui teal basic label" th:each="tag : ${blog.tags}" th:text="${tag.name}">标签</div>
                         </div>
                         <br><br>
                     </div>
